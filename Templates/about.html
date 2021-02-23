@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{url_for('static' ,filename='img/about-replace.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+
+
+<div class="btn btn-primary" style="width: 100%;">
+  
+
+    <div class="card" style="width: 18rem;float: left;">
+      <img class="card-img-top" src='{{url_for('static',filename="img/Sachin.jpg")}}' alt="Card image cap">
+      <div class="card-body" style="color: black;">
+        <h5 class="card-title">Sachin Meena</h5>
+        <p class="card-text">I am a CEO of Coderhub Site and also Web developer.</p>
+        <a href="#" class="btn btn-primary">Call Now...</a>
+      </div>
+    </div>
+
+    <div>
+      <h1>About Us</h1>
+      <p style="float:left;margin-left:2%;">Dear Viewer </p><br>
+      <p style="float: left;"> In these site we are provide latest Tech posts about a Trands...</p>
+      <br><p style="float: left;margin-left:2%;">and also Provide Programing toutorials in coderhub main site...</p>
+      <br><p style="float: left;margin-left:2%;">dare viewr i am sachin meena admin of coderhub provide a tech toutorials and also provide tech support </p>
+
+
+
+    </div>
+    
+</div>
+
+<div style="width: 100%;" class="btn btn-info"><h3><img src='{{url_for('static',filename="file:///C:/Users/kapil/OneDrive/Desktop/flask/static/img/call.svg")}}' alt="LOGO"> hello</h3></div><h1>
+
+ 
+<hr><br>
+  <!-- other type of content-->
+
+
+
+
+{%endblock%}
+
+

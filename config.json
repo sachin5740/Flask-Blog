@@ -1,0 +1,24 @@
+{
+"info":
+{
+"localhost":"True",
+"old_localhost_uri":"mysql://root:root@localhost/codingthunder",
+"localhost_uri":"mysql://root:root@localhost/coderhub",
+"production_uri":"192:0.0.0:5656",
+"blog_name":"CoderHub",
+"blog_slogan":"Coding is a Tool of Creation",
+"GMAIL_USER":"sachin.meena3198@gmail.com",
+"GMAIL_PASS":"**********your Password*******",
+"NO_OF_POST":2,
+"username":"sachin meena",
+"User_password":"**User-Password**",
+"Upload_location":"C:\\Users\\kapil\\OneDrive\\Desktop\\flask\\static\\Uploaded file\\"
+
+
+
+}
+
+
+
+
+}

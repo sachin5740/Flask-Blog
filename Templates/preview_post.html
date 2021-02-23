@@ -1,0 +1,42 @@
+{%extends "layout.html"%}
+{%block content%}
+<header class="masthead" style="background-image: url({{url_for('static', filename="img/post_bg.jpg")}});">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{info["blog_name"]}}</h1>
+            <h2 class="subheading">{{info["blog_slogan"]}}</h2>
+            <span class="meta">Posted by
+              <a href="#">{{info["blog_name"]}}</a>
+              on Ferbery {{time}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  {% for e_post in post %}
+  {% set img='img/post_img/'+e_post.img_data %}
+  <hr>
+  <div class="post-preview">
+    <a href="post/{{e_post.route}}">
+      <h2 class="post-title">
+        {{e_post.title}}
+      </h2>
+      <h5 class="post-subtitle">
+        {{e_post.content[0:220]}}
+      </a></h5>
+    </a>
+    <p class="post-meta">Posted by
+      <a href="#">{{info["blog_name"]}}</a> 
+    {{e_post.date_time}}</p>
+  </div>
+  <hr>
+
+  
+ 
+  {% endfor %}
+
+{%endblock%}

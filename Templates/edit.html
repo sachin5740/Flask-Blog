@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<header class="masthead" style="background-image: url({{url_for('static', filename="img/post_bg.jpg")}});">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Admin Dashboard</h1>
+            <h2 class="subheading">{{session['user']}}</h2>
+            <form action = "/logout" method = "post">
+                <button class="btn-primary" type = submit value = Login/>logout</button>
+             </form>
+            <span class="meta">Posted by
+              <a href="#">{{info["blog_name"]}}</a>
+              on Ferbery {{cdate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <hr> <center><button action='/admin'> <a href="/admin" class="btn btn-primary">Back To admin pannel </a></h1></center></button>
+  <hr>
+  <center><h1>Add/Edit Post</h1></center>
+  <hr>
+  
+<form method="POST" action="/edit/{{sno}}" id="contactForm" novalidate style="padding-left: 20%;padding-right: 20%;">
+  
+  <div class="form-group floating-label-form-group controls">
+    <div class="control-group">
+      <label>Post-title</label>
+      <input type="text" name="Title" class="form-control" value="{{f_data.title}}" placeholder="Post-title">
+    </div>
+  </div> 
+  
+  
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>Description</label>
+      <input type="text" class="form-control" name="detail" value="{{f_data.detail}}" placeholder="Description">
+    </div>
+  </div>
+
+
+    <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>Image name</label>
+      <input type="text" name="image_name" class="form-control" value="{{f_data.img_data}}" placeholder="Image name">
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+        <label>Content</label>
+      <input type="text" name="content" class="form-control" value="{{f_data.content}}" placeholder="Content">
+    </div>
+  </div>
+
+    <button type="submit" action="/edit/{{sno}}">submit</button>
+
+</form>
+
+{% endblock %}

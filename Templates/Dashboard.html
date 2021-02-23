@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+  
+
+<header class="masthead" style="background-image: url({{url_for('static', filename="img/post_bg.jpg")}});">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Admin Dashboard</h1>
+            <h2 class="subheading">{{session['user']}}</h2>
+            <form action = "/logout" method = "post">
+                <button class="btn-primary" type = submit value = Login/>logout</button>
+             </form>
+            <span class="meta">Posted by
+              <a href="#">{{info["blog_name"]}}</a>
+              on Ferbery {{time}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<center><h1>Admin Pannel</h1></center>
+  <hr>
+
+
+  <!--main data content-->
+  <div style="float: left;">
+ <button action='/edit/"0"'><a href="/edit/0" class="btn btn-primary float-left">Add Post</button></a>
+</div>
+ <div style="float: right;">
+    <form class="btn btn-denger" action="/uploader" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit" class="btn btn-primary " action="/uploader">Upload-File</button>
+    </form>
+    <hr>
+  </div>
+  <center><h1 style="padding-top: 200px;">Posts </h1><hr></center>
+ 
+
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">S.no</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        <th scope="col">date</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for post in post %}
+      <tr>
+        <th scope="row">{{post.sno}}</th>
+        <td>{{post.title}}</td>
+        <td>{{post.detail}}</td>
+        <td> <a class="btn btn-primary" href="/edit/{{post.sno}}">edit </a></td>
+        <td> <a class="btn btn-primary" href="/delete/{{post.sno}}">Delete </a></td>
+        <td>{{post.date_time}}</td>
+        {% endfor %}
+      </tr>
+     
+    </tbody>
+  </table>
+ 
+
+{% endblock %}

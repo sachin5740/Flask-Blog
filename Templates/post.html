@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <!-- Page Header -->
+  {% set img_name='img/post_img/'+post.img_data %}
+  <header class="masthead" style="background-image: url({{url_for('static', filename=img_name)}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{post.title}}</h1>
+            <h2 class="subheading">{{post.detail}}</h2>
+            <span class="meta">Posted by
+              <a href="#">{{info["blog_name"]}}</a>
+              on Ferbery {{post.date_time}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         
+          <h2 class="section-heading">{{post.title}}</h2>
+
+          <pre style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{post.content}} </pre>
+          <a href="#">
+            <img class="img-fluid" src={{url_for('static',filename="img/post_img/alter/alternative.jfif")}} alt="filename">
+          </a>
+          <span class="caption text-muted">{{post.title}} </span>
+
+          <h4>According to wikipedia</h4>
+
+          <p>Placeholder text by
+            <pre style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{data.content}}</pre>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+{% endblock %}
